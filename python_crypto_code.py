@@ -13,7 +13,12 @@ from Crypto.Util.number import *
 # ^ xor function, xor()
 
 
-cipher_b64 = "IREHWYJZMEcGCODGMMbTENDDGcbGEMJZGEbGEZTFGYaGKNRTMIcGIMBSGRQTSNDDGAaWGYZRHEbGCNRQMUaDOMbEMRTGEYJYGUaWGOJQMYZHa==="
-cipher_bytes = base64.b64decode(cipher_b64)
+cry = "54586b6458754f7b215c7c75424f21634f744275517d6d"  
+cry = bytes.fromhex(cry)  
+for i in range(256):
+    dec = "".join(chr(i^b) for b in cry)
+    if "DH" in dec:
+        print(dec)
 
-print(cipher_bytes)  # 바이트 형태 출력
+#16진수로 이루어져있는 암호문을 바이트로 변환 후 1바이트의 key값을 range로 돌려가면서 DH가 들어있는 구문을 찾아냄.
+#xor로 암호화
