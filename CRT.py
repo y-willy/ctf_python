@@ -19,8 +19,12 @@ r3 = inverse(n3,p3)
 flag = (c1*n1*r1+c2*n2*r2+c3*n3*r3)%n
 flag = long_to_bytes(flag)
 print(flag.decode('latin1')) #'utf-8'도 가능하다
+pow(n1,n2,n3) 
+#n1^n2 mod n3를 구하는 함수
+
 
 # (a*x) mod m = 1 일때 inverse(a,m) = x 를 통해서 모듈러 역원을 구할 수 있다.
+
 
 
 
