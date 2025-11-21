@@ -22,6 +22,10 @@ int main()
             {
                 c = 'A' + (c - 'A' + shift) % 26;
             }
+            else if(c>='a' && c<='z')
+            {
+                c = 'a' + (c-'a'+shift) %26;
+            }
             crypto_char += c;
         }
         cout << crypto_char << endl;
@@ -29,3 +33,4 @@ int main()
 
     return 0;
 }
+
