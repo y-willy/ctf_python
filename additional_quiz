@@ -1,0 +1,14 @@
+from pwn import *
+import re
+from typing import List
+
+Host = "host3.dreamhack.games"
+Port = 23585
+
+r = remote(Host,Port, timeout =  5)
+for i in range(50):
+    a = r.recvline(timeout = 5)
+    nums = re.findall(rb'\d+', a)
+    x,y = map(int, nums)
+    r.sendline(str(x+y).encode())
+print(r.recvall())
